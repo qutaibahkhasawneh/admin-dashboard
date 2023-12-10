@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4" style="margin-top: 20px">
-                <form action="{{ route('login_admin') }}" method="post">
+                <form action="{{ url('login-admin') }}" method="post">
                     @csrf
                     @if (Session::has('success'))
                     <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -25,11 +25,13 @@
 
                 <div class="form-group">
                     <label for="email">Email </label>
-                    <input type="email" name="email" class="form-control" placeholder="enter your email" value="">
+                    <input type="email" name="email" class="form-control" placeholder="enter your email" value="{{ old('email') }}">
+                    <span class="text-danger">@error('email') {{$message}}@enderror </span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password </label>
-                    <input type="password" name="password" class="form-control"  value="">
+                    <input type="password" name="password" class="form-control" value="{{ old('password') }}">
+                    <span class="text-danger">@error('password') {{$message}}@enderror </span>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-block btn-primary" type="submit">Login</button>

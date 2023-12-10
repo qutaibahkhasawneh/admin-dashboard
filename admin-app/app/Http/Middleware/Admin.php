@@ -16,9 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!session()->has('loginId')){
-            return redirect('/');
-        }
+        // if(!session()->has('loginId')){
+        //     return redirect('/login');
+        // }
 
         return $next($request);
     }

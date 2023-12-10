@@ -39,7 +39,7 @@ class AdminController extends Controller
 
         $request->validate([
 
-            'email' => 'required|email|unique:admins,email',
+            'email' => 'required|email:admins,email',
             'password' => 'required|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'
 
     ]);

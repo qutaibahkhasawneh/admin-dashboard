@@ -17,7 +17,7 @@ use App\http\controllers\RoleController;
 */
 
 Route::get('/', function () {
-    return view('auth.register');
+    return view('auth.login');
 });
 
 Route::group(['middleware'=>['admin']],function(){
